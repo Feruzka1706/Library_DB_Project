@@ -1,4 +1,4 @@
-@ui
+@smoke
 Feature: As a data consumer, I want UI and DB book information are match
 
   Scenario: verify book information with DB

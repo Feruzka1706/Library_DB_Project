@@ -15,7 +15,7 @@ public class Hooks {
     /**
      * This @Before  for UI part
      */
-    @Before("@ui")
+    @Before()
     public void setupDriver() {
         // set up implicit wait
         Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -30,7 +30,7 @@ public class Hooks {
      * This @After for UI part
      * @param scenario
      */
-    @After("@ui")
+    @After()
     public void tearDown(Scenario scenario) {
 
         // check if scenario failed or not
@@ -43,6 +43,9 @@ public class Hooks {
         }
         Driver.closeBrowser();
     }
+
+
+
 
 
 }

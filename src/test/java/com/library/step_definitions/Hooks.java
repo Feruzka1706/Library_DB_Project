@@ -6,8 +6,6 @@ import com.library.utility.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -17,9 +15,8 @@ public class Hooks {
     /**
      * This @Before  for UI part
      */
-    @Before
+    @Before("@ui")
     public void setupDriver() {
-
         // set up implicit wait
         Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         // you can add maximize browser if you want to do it
@@ -33,7 +30,7 @@ public class Hooks {
      * This @After for UI part
      * @param scenario
      */
-    @After
+    @After("@ui")
     public void tearDown(Scenario scenario) {
 
         // check if scenario failed or not

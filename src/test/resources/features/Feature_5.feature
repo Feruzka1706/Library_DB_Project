@@ -1,3 +1,4 @@
+@ui
 Feature: As a data consumer, I want UI and DB book information are match
 
   Scenario: verify book information with DB
@@ -8,5 +9,6 @@ Feature: As a data consumer, I want UI and DB book information are match
     And I execute query to get the book information from books table
     Then verify book DB and UI information must match
 
-      | name         | author        | year |
-      | Harry Potter | Djoan Rowling | 2000 |
+      #| name         | author        | year |
+      #| Harry Potter | Djoan Rowling | 2000 |
+

@@ -26,7 +26,7 @@ public class DB_Util {
 
         try {
             con = DriverManager.getConnection(url, username, password) ;
-            System.out.println("CONNECTION SUCCESSFUL");
+            //System.out.println("CONNECTION SUCCESSFUL");
         } catch (Exception e) {
             System.out.println("CONNECTION HAS FAILED " + e.getMessage() );
         }
@@ -338,10 +338,11 @@ public class DB_Util {
         try{
 
             rs.absolute(rowNum) ;
+            ;
 
             for (int colIndex = 1; colIndex <= columnCount ; colIndex++) {
                 String columnName = rsmd.getColumnName(colIndex) ;
-                String cellValue  = rs.getString(colIndex) ;
+                String cellValue = rs.getString(colIndex);
                 rowMap.put(columnName, cellValue) ;
             }
 

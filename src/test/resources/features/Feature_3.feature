@@ -1,9 +1,11 @@
+@us3
 Feature: As a librarian, I want to know genre of books are being borrowed the most
 
+  @db
   Scenario: verify the the common book genre that’s being borrowed
-    Given Establish the database connection
+    Given Established DB connection
     When I execute query to left outer inner join books and book_borrow on Book_Id
-    Then verify what is the most popular book genre.
+    Then verify "Action and Adventure" is the most popular book genre
 
 
     #"select  bc.name ,count(bb.book_id) from book_categories bc\n" +

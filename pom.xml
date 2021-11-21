@@ -104,7 +104,7 @@
                     <perCoreThreadCount>false</perCoreThreadCount>
                     <includes>
                         <include>**/*TestRunner.java</include>
-                        <include>**/*FailedTestRunner.java</include>
+<!--                        <include>**/*FailedTestRunner.java</include>-->
                     </includes>
                 </configuration>
 

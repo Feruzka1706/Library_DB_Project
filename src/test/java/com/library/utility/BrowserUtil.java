@@ -127,7 +127,7 @@ public class BrowserUtil {
             return true;
 
         } catch (TimeoutException e) {
-            System.err.println("Create Car button does not exist");
+            System.err.println("That element does not exist");
         }
 
         return false;

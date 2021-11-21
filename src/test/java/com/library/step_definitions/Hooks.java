@@ -15,7 +15,7 @@ public class Hooks {
     /**
      * This @Before  for UI part
      */
-    @Before()
+    @Before("@ui")
     public void setupDriver() {
         // set up implicit wait
         Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -25,12 +25,11 @@ public class Hooks {
 
 
 
-
     /**
      * This @After for UI part
      * @param scenario
      */
-    @After()
+    @After("@ui")
     public void tearDown(Scenario scenario) {
 
         // check if scenario failed or not
@@ -44,7 +43,22 @@ public class Hooks {
         Driver.closeBrowser();
     }
 
+    @Before("@db")
+    public void dbSetup() {
 
+        String url= ConfigReader.read("library2.database.url");
+        String username=ConfigReader.read("library2.database.username");
+        String password=ConfigReader.read("library2.database.password");
+
+        DB_Util.createConnection(url,username,password);
+
+    }
+
+    @After("@db")
+    public void dbTearDown() {
+
+        DB_Util.destroy();
+    }
 
 
 

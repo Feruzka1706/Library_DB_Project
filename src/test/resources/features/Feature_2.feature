@@ -1,7 +1,8 @@
+@us2
 Feature: As a librarian, I want to know who borrowed books
 
-
+  @ui @db
   Scenario: verify the amount of people who borrowed books
-    Given Establish the database connection
-    When I execute query to inner join users and book_borrow on Id
-    Then verify amount of people who had borrowed books
+    Given I am in the homepage of library app
+    When I take borrowed books amount
+    Then borrowed books amount information must match with database information

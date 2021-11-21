@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
                   },
 
           dryRun = false
-          ,tags="@smoke"
+          ,tags="@us7"
 
 )
 public class TestRunner {

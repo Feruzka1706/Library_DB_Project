@@ -40,11 +40,12 @@ public class Feature05_StepDef {
 
     }
 
-
-    @When("I open a book called “Harry Potter”")
-    public void i_open_a_book_called_harry_potter() {
+     String bookName;
+    @When("I open a book called {string}")
+    public void i_open_a_book_called_harry_potter(String book) {
+        bookName=book;
         new Actions(Driver.getDriver()).click(feature05Page.searchBookBox)
-                .pause(2000).sendKeys("Djoan Rowling").perform();
+                .pause(2000).sendKeys(bookName).perform();
 
         BrowserUtil.waitFor(2);
         //we are adding inside expected result Map the book info from UI part, book table
@@ -60,14 +61,12 @@ public class Feature05_StepDef {
     }
 
 
-     @When("I established DB connection")
+     @When("Established DB connection")
     public void i_established_db_connection() {
 
-         String url= ConfigReader.read("library2.database.url");
-         String username=ConfigReader.read("library2.database.username");
-         String password=ConfigReader.read("library2.database.password");
-
-         DB_Util.createConnection(url,username,password);
+         System.out.println("*******************************************");
+         System.out.println("***** Connection is DONE via HOOKS ********");
+         System.out.println("*******************************************");
 
      }
 
